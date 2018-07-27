@@ -1,7 +1,7 @@
 var socket = io();
 
 socket.on('connect', function () {
-  
+
 });
 
 socket.on('disconnect', function () {
@@ -10,4 +10,27 @@ socket.on('disconnect', function () {
 
 socket.on('newMsg', function (msg) {
   console.log('newMsg', msg);
+  var li = jQuery('<li></li>');
+  li.text(`${msg.from}: ${msg.text}`);
+
+  jQuery('#chatlog').append(li);
+});
+//
+// socket.emit('createMsg', {
+//   from: 'RocketCat777',
+//   text: 'Sup peoples!?'
+// }, function () {
+//   console.log('Delivered');
+// });
+
+jQuery('#msg-form').on('submit', function (e) {
+  e.preventDefault();
+
+  socket.emit('createMsg', {
+    from: 'User',
+    text: jQuery('[name=message]').val()
+  }, function () {
+
+  });
+
 });

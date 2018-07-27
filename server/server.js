@@ -19,9 +19,10 @@ io.on('connection', (socket) => {
 
   socket.broadcast.emit('newMsg', generateMsg('Admin', 'A new user entered the chatroom'));
 
-  socket.on('createMsg', (msg) => {
+  socket.on('createMsg', (msg, callback) => {
     console.log('msg recieved on Server', msg);
     io.emit('newMsg', generateMsg(msg.from, msg.text));
+    callback();
   });
 
   socket.on('disconnect', () => {
