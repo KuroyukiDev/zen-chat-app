@@ -12,8 +12,19 @@ var io = socketIO(server);
 app.use(express.static(publicPath));
 
 io.on('connection', (socket) => {
-  console.log('New user connected.');
+  // console.log('New user connected.');
 
+  socket.emit('newMsg', {
+    from: 'Admin',
+    text: 'Welcome to Zen Web Chat!',
+    createdAt: new Date().getTime()
+  });
+
+  socket.broadcast.emit('newMsg', {
+    from: 'Admin',
+    text: 'A new user entered the chatroom',
+    createdAt: new Date().getTime()
+  });
 
   socket.on('createMsg', (msg) => {
     console.log('msg recieved on Server', msg);
