@@ -2,19 +2,45 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <!-- <link rel="stylesheet" href="/css/styles.css" /> -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="/css/chat-view-style.css" />
 
 </head>
 <body>
-  <p>Welcome to the chat app!</p>
-  <ol id="chatlog">
-    
-  </ol>
+  <div class="container">
+    <p class="text-center">Welcome to the chat app!</p>
+    <div class="row">
+      <ol class="chat-log-style list-group" id="chatlog">
 
-  <form id="msg-form">
-    <input type="text" name="message" placeholder="Message" />
-    <button>Send</button>
-  </form>
+      </ol>
+    </div>
+
+    <div class="row" id="input-form-area">
+      <form class="input-group form-inline" id="msg-form">
+          <input class="form-control input-lg" type="text" name="message" placeholder="Message" />
+
+        <div class="input-group-btn">
+            <button type="submit" class="btn btn-primary input-lg">Send</button>
+            <button type="button" class="btn btn-default input-lg" id="send-location">Send Location</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+
 
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/libs/jquery-3.1.0.min.js"></script>

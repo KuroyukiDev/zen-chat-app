@@ -10,18 +10,12 @@ socket.on('disconnect', function () {
 
 socket.on('newMsg', function (msg) {
   console.log('newMsg', msg);
-  var li = jQuery('<li></li>');
+  var li = jQuery('<li class="list-group-item"></li>');
   li.text(`${msg.from}: ${msg.text}`);
 
   jQuery('#chatlog').append(li);
 });
-//
-// socket.emit('createMsg', {
-//   from: 'RocketCat777',
-//   text: 'Sup peoples!?'
-// }, function () {
-//   console.log('Delivered');
-// });
+
 
 jQuery('#msg-form').on('submit', function (e) {
   e.preventDefault();
