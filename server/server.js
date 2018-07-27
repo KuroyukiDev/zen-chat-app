@@ -3,6 +3,7 @@ const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
 
+const {generateMsg} = require('./utils/message');
 const publicPath = path.join(__dirname, '../public');
 const port = process.env.PORT || 3000;
 var app = express();
@@ -14,25 +15,13 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
   // console.log('New user connected.');
 
-  socket.emit('newMsg', {
-    from: 'Admin',
-    text: 'Welcome to Zen Web Chat!',
-    createdAt: new Date().getTime()
-  });
+  socket.emit('newMsg', generateMsg('Admin', 'Welcome to Zen Web Chat!'));
 
-  socket.broadcast.emit('newMsg', {
-    from: 'Admin',
-    text: 'A new user entered the chatroom',
-    createdAt: new Date().getTime()
-  });
+  socket.broadcast.emit('newMsg', generateMsg('Admin', 'A new user entered the chatroom'));
 
   socket.on('createMsg', (msg) => {
     console.log('msg recieved on Server', msg);
-    io.emit('newMsg', {
-      from: msg.from,
-      text: msg.text,
-      createdAt: new Date().getTime()
-    });
+    io.emit('newMsg', generateMsg(msg.from, msg.text));
   });
 
   socket.on('disconnect', () => {
