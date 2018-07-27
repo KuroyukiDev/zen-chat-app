@@ -21,10 +21,10 @@ body {
   position: relative;
 }
 
-@media screen and (min-height: 640px) and (orientation: portrait) {
+@media screen and (min-height: 560px) and (orientation: portrait) {
   .chat-log-style {
-    height: 525px;
-    min-height: 300px;
+    height: 500px;
+    min-height: 220px;
     width: 100%;
   }
 
