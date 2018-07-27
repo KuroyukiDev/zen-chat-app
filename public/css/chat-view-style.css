@@ -3,9 +3,8 @@ body {
   width: 100vw;
 }
 .chat-log-style {
-  max-height: 95vh;
+  height: 90vh;
   min-height: 70vh;
-  height: 85vh;
   overflow-y: auto;
   width: 100%;
   margin: auto;
@@ -15,9 +14,7 @@ body {
 
 #input-form-area {
   bottom: 0;
-  height: auto;
-  max-height: 5vh;
-  min-height: 2vh;
+  height: 5vh;
   width: 100%;
   margin: auto auto 0 auto;
   padding: 8px;
