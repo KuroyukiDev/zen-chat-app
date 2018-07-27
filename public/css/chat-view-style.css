@@ -12,11 +12,27 @@ body {
   border-radius: 10px;
 }
 
-#input-form-area {
+.input-form-area {
   bottom: 0;
   height: 5vh;
   width: 100%;
   margin: auto auto 0 auto;
   padding: 8px;
   position: relative;
+}
+
+@media screen and (min-height: 640px) and (orientation: portrait) {
+  .chat-log-style {
+    height: 535px;
+    min-height: 330px;
+    width: 100%;
+  }
+
+  .input-form-area {
+    border: 3px solid black;
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
+    padding: 5px 3.5px;
+  }
 }
