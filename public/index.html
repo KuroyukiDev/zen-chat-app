@@ -10,25 +10,26 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
-  <link rel="stylesheet" href="/css/chat-view-style.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/chat-view-style.css" />
 
 </head>
 <body>
   <div class="container">
 
-    <div class="row">
+    <div id="msg-area" class="row">
       <ol class="chat-log-style list-group" id="chatlog">
 
       </ol>
     </div>
 
-    <div class="row input-form-area">
+    <div id="input-form-area" class="row">
       <form class="input-group form-inline" id="msg-form">
-          <input class="form-control input-md" type="text" name="message" placeholder="Message" />
+          <textarea class="form-control input-lg" type="text" name="message" style="resize: none;" rows="3" placeholder="Message"></textarea>
 
         <div class="input-group-btn">
-            <button type="submit" class="btn btn-primary input-md"><span class="glyphicon glyphicon-send"></span></button>
-            <button type="button" class="btn btn-default input-md" id="send-location"><span class="glyphicon glyphicon-map-marker"></span></button>
+            <button type="submit" class="btn btn-primary form-control"><span class="glyphicon glyphicon-send"></span></button>
+            <button type="button" class="btn btn-default form-control" disabled id="send-location"><span class="glyphicon glyphicon-map-marker"></span></button>
         </div>
       </form>
 
@@ -40,12 +41,12 @@
 
 
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/libs/jquery-3.1.0.min.js"></script>
+  <script src="./socket.io/socket.io.js"></script>
+  <script src="./js/libs/jquery-3.1.0.min.js"></script>
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <script src="/js/index.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>
