@@ -49,7 +49,7 @@ button.form-control span {
 
 @media screen and (min-height: 560px) and (orientation: portrait) {
   #msg-area {
-    height: 80vh;
+    height: 76vh;
     width: 100%;
     margin: auto;
   }
