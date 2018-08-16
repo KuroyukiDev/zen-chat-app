@@ -4,8 +4,8 @@ body {
 }
 
 #msg-area {
-  z-index: 0;
   height: 90vh;
+  min-height: inherit;
   width: 100%;
   border: 3px solid black;
   border-radius: 10px;
@@ -38,12 +38,11 @@ button.form-control span {
 
 #input-form-area {
   bottom: 0;
-  z-index: 4;
   height: auto;
   width: inherit;
   margin: auto auto 0 auto;
   padding: 8px;
-  position: fixed;
+  position: absolute;
 }
 
 
