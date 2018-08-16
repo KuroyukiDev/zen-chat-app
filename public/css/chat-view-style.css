@@ -5,7 +5,7 @@ body {
 
 #msg-area {
   height: 90vh;
-  min-height: 5vh;
+  min-height: 2vh;
   width: 100%;
   border: 3px solid black;
   border-radius: 10px;
